@@ -2,36 +2,32 @@ package LOGIC;
 
 import java.util.ArrayList;
 
-/**
- * @author Nguyen Duong
- * Represents Method component
- * Each method has name, type, access modifier and params
- */
+// Represents Method component
+// Each method has name, type, access modifier and params
+ 
 public class Method extends Component {
     private boolean isConstructor;
     private ArrayList<Param> params;
     private String sourceCode;
 
-    /**
-     * Default Constructor
-     */
+    // Default Constructor
+     
     public Method() {
         params = new ArrayList<>();
     }
 
-    /**
-     * Constructor with 2 params
-     * @param name String
-     */
+    // Constructor with 2 params
+    // param name String
+    
     public Method(String name, String type, String[] modifiers) {
         this.name = name;
         this.type = type;
 
-        /* Default value */
+        // Default value 
         this.accessModifier = "public";
         this.isStatic = false;
 
-        /* Checks the method is a constructor or not*/
+        // Checks the method is a constructor or not
         if (type.equals(name))
             this.isConstructor = true;
         else
@@ -48,18 +44,16 @@ public class Method extends Component {
     }
 
 
-    /**
-     * Adds a parameter to the parameterlist
-     * @param param Parameter
-     */
+    // Adds a parameter to the parameterlist
+    // param param Parameter
+     
     public void addParam(Param param) {
         params.add(param);
     }
 
-    /**
-     * Represents method
-     * @return a string represents method
-     */
+    // Represents method
+    // return a string represents method
+     
     @Override
     public String toString() {
         String paramString = "(";
@@ -74,10 +68,9 @@ public class Method extends Component {
 
     }
 
-    /**
-     * Gets the parameter list of the method
-     * @return params
-     */
+    // Gets the parameter list of the method
+    // return params
+     
     public ArrayList<Param> getParams() {
         return params;
     }
@@ -90,12 +83,11 @@ public class Method extends Component {
         this.sourceCode = sourceCode;
     }
 
-    /**
-     * Compares 2 methods
-     * Equal if they have the same: return type, name, parameter list has the same types
-     * @param m Component
-     * @return true if equal
-     */
+    // Compares 2 methods
+    // Equal if they have the same: return type, name, parameter list has the same types
+    // param m Component
+    // return true if equal
+     
     @Override
     public boolean equalsTo(Component m) {
         if (m == this)

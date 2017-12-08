@@ -2,22 +2,19 @@ package LOGIC;
 
 import java.util.ArrayList;
 
-/**
- * @author Nguyen Duong
- * Represents Interface structure
- */
+ //Represents Interface structure
+ 
 public class Interface extends Structure {
 
-    /**
-     * Default Constructor
-     */
+    // Default Constructor
+     
     public Interface() {
         super();
     }
 
     public Interface(String name, String[] modifiers) {
 
-        /* Default values */
+        // Default values 
         this.name = name;
         this.accessModifier = "public";
         this.level = 0;
@@ -35,10 +32,9 @@ public class Interface extends Structure {
         superStructureNames = new ArrayList<>();
     }
 
-    /**
-     * Represents Interface
-     * @return a string that represents Interface
-     */
+    // Represents Interface
+    // return a string that represents Interface
+     
     @Override
     public String toString() {
         return this.getAccessModifier() + " interface : " + this.getName();

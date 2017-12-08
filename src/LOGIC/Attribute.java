@@ -1,8 +1,6 @@
 package LOGIC;
 
-/**
- * Represent attribute components
- */
+// Represent attribute components
 public class Attribute extends Component {
 
     private boolean isConstant;
@@ -30,37 +28,33 @@ public class Attribute extends Component {
     }
 
 
-    /**
-     * Check if attribute is constant or not
-     * @return isConstant
-     */
+    // Check if attribute is constant or not
+    // return isConstant
+     
     public boolean isConstant() {
         return isConstant;
     }
 
-    /**
-     * Set attribute value to constant
-     * @param constant boolean
-     */
+    // Set attribute value to constant
+    // param constant boolean
+  
     public void setConstant(boolean constant) {
         isConstant = constant;
     }
 
-    /**
-     * Represent attribute
-     * @return string which describes attribute
-     */
+    // Represent attribute
+    // return string which describes attribute
+    
     @Override
     public String toString() {
         return this.getAccessModifier() + " " + this.getType() + ": "  + this.getName();
     }
 
-    /**
-     * Comparing 2 attributes
-     * If 2 attributes have the same name, then they are equal
-     * @param attribute components
-     * @return true if 2 attributes are equal
-     */
+    // Comparing 2 attributes
+    // If 2 attributes have the same name, then they are equal
+    // param attribute components
+    // return true if 2 attributes are equal
+     
     @Override
     public boolean equalsTo(Component attr) {
         if (attr == this)

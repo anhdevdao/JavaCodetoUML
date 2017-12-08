@@ -2,14 +2,12 @@ package LOGIC;
 
 import java.util.ArrayList;
 
-/**
- * @author Nguyen Duong
- * Represents structures such as Class,...
- * Each structure has name, accessModifier
- * Each structure has many methods and attributes
- * Each structure can come from the super class of other structure / derive from other structure
- * An Interface derives from many other Interfaces
- */
+// Represents structures such as Class,...
+// Each structure has name, accessModifier
+// Each structure has many methods and attributes
+// Each structure can come from the super class of other structure / derive from other structure
+// An Interface derives from many other Interfaces
+ 
 abstract public class Structure {
     protected String name; // Get name of the structures
     protected String accessModifier; // Get modifiers of the structures
@@ -22,9 +20,8 @@ abstract public class Structure {
     protected boolean isInterface;
     protected String sourceCode;
 
-    /**
-     * Default constructor
-     */
+    // Default constructor
+     
     public Structure() {
         accessModifier = "public";
 
@@ -36,36 +33,30 @@ abstract public class Structure {
     }
 
 
-    /**
-     * Gets method lists of the structure
-     * @return methods
-     */
+    // Gets method lists of the structure
+    // return methods
+     
     public ArrayList<Method> getMethods() {
         return methods;
     }
 
-    /**
-     * Gets the attribute lists of structure
-     *
-     * @return attributes
-     */
+    // Gets the attribute lists of structure
+    // return attributes
+     
     public ArrayList<Attribute> getAttributes() {
         return attributes;
     }
 
-    /**
-     * Gets name of the structures
-     *
-     * @return name
-     */
+    // Gets name of the structures
+    // @return name
+     
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets name of the structures
-     * @param name String
-     */
+    // Sets name of the structures
+    // param name String
+     
     public void setName(String name) {
         this.name = name;
     }
@@ -78,18 +69,16 @@ abstract public class Structure {
         this.accessModifier = accessModifier;
     }
 
-    /**
-     * Gets list of structures which is this structures inherits
-     * @return superStructures
-     */
+    // Gets list of structures which is this structures inherits
+    // return superStructures
+     
     public ArrayList<Structure> getSuperStructures() {
         return superStructures;
     }
 
-    /**
-     * Gets list of structures which is inherit from this structures
-     * @return derivedStructures
-     */
+    // Gets list of structures which is inherit from this structures
+    // return derivedStructures
+     
     public ArrayList<Structure> getDerivedStructure() {
         return derivedStructures;
     }
@@ -98,42 +87,37 @@ abstract public class Structure {
         return level;
     }
 
-    /**
-     * Represents structure
-     * @return a string 
-     */
+    // Represents structure
+    // return a string 
+     
     abstract public String toString();
 
-    /**
-     * Adds method to the method list of structure
-     * @param m Method
-     */
+    // Adds method to the method list of structure
+    // param m Method
+     
     public void addMethod(Method m) {
         this.methods.add(m);
         m.setOwner(this);
     }
 
-    /**
-     * Adds attribute to the attribute list of structure
-     * @param a Attribute
-     */
+    // Adds attribute to the attribute list of structure
+    // param a Attribute
+     
     public void addAttribute(Attribute a) {
         this.attributes.add(a);
         a.setOwner(this);
     }
 
-    /**
-     * Adds structure to the subStructure list of that structure
-     * @param st Structure
-     */
+    // Adds structure to the subStructure list of that structure
+    // param st Structure
+     
     public void addSubStructure(Structure st) {
         this.derivedStructures.add(st);
     }
 
-    /**
-     * This structure inherits from other one
-     * @param st Structure
-     */
+    // This structure inherits from other one
+    // param st Structure
+     
     public void inherit(Structure st) {
         this.superStructures.add(st);
         st.addSubStructure(this);
@@ -146,11 +130,10 @@ abstract public class Structure {
     public ArrayList<String> getSuperStructureNames(){
         return superStructureNames;
     }
-    /**
-     * Compares 2 structures. They are equal if they have the same type, same name, same package
-     * @param st Structure
-     * @return true if 2 structures are equal
-     */
+    // Compares 2 structures. They are equal if they have the same type, same name, same package
+    // param st Structure
+    // return true if 2 structures are equal
+     
     public boolean equalsTo(Structure st) {
         return (st.getClass() == this.getClass() && st.getName() == this.getName());
     }

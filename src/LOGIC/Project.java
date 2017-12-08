@@ -8,10 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * @author Nguyen Duong
- * Get all the Java files in the project
- */
+// Get all the Java files in the project
+ 
 public class Project {
     private Diagram diagram;
     public Project(String path) throws IOException{

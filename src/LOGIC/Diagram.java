@@ -1,10 +1,8 @@
 package LOGIC;
 
-/**
- * @author Nguyen Duong
- * 
- * Presents the Diagram class
- */
+
+ // Presents the Diagram class
+
 
 import java.util.*;
 
